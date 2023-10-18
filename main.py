@@ -7,8 +7,8 @@ serverPort = 8080
 class MyServer(BaseHTTPRequestHandler):
 
     def get_content(self):
-        f = open('hw19_1.html', 'r', encoding="utf-8")
-        r = f.read()
+        with open('hw19_1.html', 'r', encoding="utf-8") as f:
+            r = f.read()
         return f"""{r}"""
     def do_GET(self):
         """ Метод для обработки входящих GET-запросов """
